@@ -2768,6 +2768,13 @@
 		color: var(--link-main-color) !important;
 	}
 	
+	/* Ссылка */
+	.editor-content a.andropov_link {
+		background: var(--bck-second) !important;
+		border: unset !important;
+		box-shadow: var(--box-shadow-main);
+	}
+	
 	
 	/* Скроллбар */
 	.ce-popover::-webkit-scrollbar {
