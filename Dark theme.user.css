@@ -1,0 +1,3019 @@
+/* ==UserStyle==
+@name           Тёмная тема для DTF (для Stylus, Stylish)
+@namespace      https://github.com/TentacleTenticals
+@homepageURL    https://github.com/TentacleTenticals
+@version        1.0
+@description    Тёмная тема для DTF. Подходит только для расширений Stylus и Stylish.
+@author         Tentacle Tenticals
+@license MIT
+==/UserStyle== */
+
+@-moz-document domain("dtf.ru") {
+/* ROOT */
+
+	/* Импорт шрифтов */
+	@import url('https://fonts.googleapis.com/css2?family=Volkhov:ital@1&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+	@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=PT2+Sans:ital,wght@1,700&display=swap');
+
+	@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+	@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans+Italic:ital,wght@1,300&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans+Bold+Italic:ital@1&display=swap');
+
+	@import url('https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap');
+	
+	/* Список настроек цвета и т.п */
+	:root {
+		/* ФОНЫ */
+		
+		/* Фон шапки DTF */
+		--BCK-dtf-header: rgb(41,56,71);
+		/* Главный фон страницы */
+		--bck-main: rgb(18,4,33);
+		--bck-second: rgb(38,32,54);
+		--bck-second-hover: rgb(47, 39, 66);
+		--bck-third: rgb(39, 9, 71);
+
+		--bck-main-2: rgb(30, 2, 60);
+		
+		--lay-left-column-bck: rgb(11,3,20);
+		--lay-right-column-bck: rgb(7,7,7);
+
+		/* ОКРУГЛЕНИЕ УГЛОВ ЭЛЕМЕНТОВ */
+		--radius-main: 3px;
+
+		/* ЦВЕТ ТЕКСТА */
+		--font-color-main: rgb(255, 255, 255);
+		--font-color-main-hover: rgb(154, 247, 203);
+		--font-color-second: rgb(197,198,197);
+		--font-color-second-hover: rgb(228, 230, 228);
+		--font-color-third: rgb(151, 151, 151);
+
+		/* ТЕНЬ-БОРДЕР */
+		--box-shadow-main: 0px 0px 0px 1px rgb(80,80,80);
+		--box-shadow-main-2: 0px 0px 2px 2px rgb(99, 8, 102);
+		--box-shadow-second: 0px 0px 0px 1px rgb(70,70,70);
+		--box-shadow-third: 0px 0px 0px 1px rgb(109,87,156);
+		--box-shadow-third-hover: 0px 0px 0px 1px rgb(134, 108, 192);
+		
+		/* БОРДЕР */
+		--Main-border: 1px solid rgb(80,80,80);
+		--Second-border: 1px solid rgb(70,70,70);
+		
+		/* ЦВЕТ ССЫЛОК */
+		--Main-link-title: rgb(129,186,235);
+		--link-main-color: rgb(0,158,255);
+		--link-main-color-hover: rgb(0,188,255);
+		
+		/* ЦВЕТ ОЦЕНОК */
+		--positive-text-color: rgb(95, 226, 108);
+		--negative-text-color: red;
+		
+		/* БОРДЕР ВЕТОК КОММЕНТАРИЕВ */
+		--Main-commentBranch-left: 2px solid rgb(188, 188, 190);
+		--Main-commentBranch-bottom: 5px dashed rgb(218,188,190);
+		
+		/* НАСТРОЙКИ РАЗМЕРА ГЛАВНОЙ ПАНЕЛИ СТАТЕЙ */
+		--Main-width: calc(600px);
+		--topic-width-enhanced: 830px;
+		
+		/* ЦВЕТА ПОДСАЙТОВ */
+		--Subsite-color: rgb(202, 159, 245);
+		--Subsite-color-hover: rgb(219, 186, 251);
+		
+		/* ЦВЕТА АВТОРОВ */
+		--Author-color: rgb(255, 255, 255);
+		--Author-color-hover: rgb(147, 245, 240);
+		
+		/* МЕНЮ */
+		--menu-bck: rgb(40, 2, 40);
+		--menu-search-bck: rgb(75, 3, 75);
+		--menu-search-bck-2: rgb(47, 1, 47);
+		--menu-font-color: rgb(255, 255, 255);
+		--menu-box-shadow: 0px 0px 2px 1px rgb(255 255 255);
+		--menu-item-color-hovered: rgb(114, 248, 255);
+		--menu-item-color-hovered-2: rgb(81, 5, 81);
+		
+		--menu-item-picked-bck: rgb(52,69,72);
+		
+		/* КНОПКИ */
+		--button-bck: rgb(28,28,28);
+		--button-bck-hover: rgb(41, 41, 41);
+		--button-font-color: rgb(255, 255, 255);
+		--button-font-color-hover: rgb(154, 247, 203);
+		
+		/* ТЕКСТОВЫЕ КНОПКИ */
+		--Main-textButtons-color: rgb(99, 166, 173);
+		--Main-textButtons-color-hover: rgb(110, 186, 194);
+		
+		/* МЕНЮ ОПОВЕЩЕНИЙ (новые комментарии, оценки и т.п.) */
+		--ntf-content-button-color: rgb(255, 255, 255);
+		--ntf-content-button-color-hover: rgb(150, 249, 215);
+		--ntf-author-color: rgb(202, 159, 245);
+		--ntf-author-color-hover: rgb(217, 187, 247);
+		--ntf-topic-color: rgb(159, 222, 245);
+		--ntf-topic-color-hover: rgb(198, 240, 255);
+		
+		/* СКРОЛЛБАР */
+		--scrollbar-main-bck: rgb(41,56,71);
+		--scrollbar-main-border: 1px solid rgb(46, 63, 80);
+		--scrollbar-main-width: 9px;
+		--scrollbar-main-thumb-bck: rgba(227,209,228,0.7);
+		--scrollbar-main-thumb-radius: 3px;
+		--scrollbar-main-thumb-border: 1px solid rgb(0, 0, 0);
+		--scrollbar-main-thumb-bck-hover: rgb(203,207,234);
+	}
+	
+	/* Вид страницы, пока она загружается */
+	.l-page--loading {
+		background-color: var(--bck-main);
+	}
+	
+	
+/* 	.andropov__link-mini {
+		color: red;
+	}
+	
+	.andropov_link_mini .andropov_link_mini--link {
+		color: red;
+	} */
+	
+	.table__row--header .table__cell small {
+		color: var(--font-color-main);
+	}
+	
+	/* Шрифт текста в текстовых блоках */
+	p {
+/* 		font-family: 'PT Sans', sans-serif; */
+/* 		font-family: 'EB Garamond', serif; */
+		font-family: 'Nunito Sans', sans-serif;
+	}
+	p>i {
+		font-family: 'Nunito Sans Italic', sans-serif;
+	}
+	p>b>i {
+		font-family: 'Nunito Sans Bold Italic', sans-serif;
+/* 		font-family: 'Raleway', sans-serif; */
+/* 		font-weight: 600; */
+	}
+	p>b {
+/* 		font-family: 'PT2 Sans', sans-serif; */
+	}
+	
+	/* Общие настройки менюшек, появляющихся при нажатии на кнопки и т.п. */
+	.popover__content {
+		padding: 0px 0px 0px 0px;
+	}
+	.popover-item {
+		padding: 6px;
+	}
+	/* Выбранный элемент в меню */
+	.popover-item.popover-item--selected {
+		background: rgb(77, 77, 77);
+		border-radius: unset;
+	}
+	/* Правка всех меню - теперь при конце скролла, страница не будет скроллиться */
+	.popover__scrollable {
+		overscroll-behavior: contain;
+	}
+/* 	.popover {
+		background: var(--menu-bck);
+		box-shadow: var(--box-shadow-main);
+	}
+	.v-field--focused > .v-field__wrapper {
+		background: rgb(98, 98, 98);
+	} */
+/* 	.popover-item__label:hover {
+		color: red;
+	} */
+	
+	.content-footer .vote__value {
+		color: var(--Main-textButtons-color);
+	}
+	
+	.notify-item {
+		background: rgb(122, 6, 64) !important;
+		color: var(--font-color-main) !important;
+		border-radius: var(--radius-main) !important;
+		box-shadow: var(--box-shadow-main) !important;
+	}
+	
+	/* "Просмотры" статей */
+	.content .views {
+		color: var(--font-color-second);
+	}
+	
+	/* Надпись "Обсуждаемое" в "Популярном" */
+	.content-header-promoted {
+		color: var(--font-color-second);
+	}
+}
+@-moz-document domain("dtf.ru") {
+	/* ПРОСМОТР ИЗОБРАЖЕНИЙ ГАЛЕРЕИ */
+	
+	/* Кнопки навигации. По-дефолту, гении дизайна решили, что кнопки шириной во всю ширину изображения это отличная идея.
+	Исправлено */
+	.pswp__button--arrow--left,
+	.pswp__button--arrow--right {
+		width: 50px;
+	}
+	
+	/* Футер */
+	.gl__footer {
+		background: rgb(29,0,34);
+	}
+	.gl__title {
+		color: var(--font-color-main);
+	}
+	.gl__author {
+		color: var(--font-color-second);
+	}
+	.gl__counter {
+		color: var(--font-color-main);
+	}
+}
+@-moz-document domain("dtf.ru") {
+	/* ШАПКА DTF */
+
+	.site-header-container {
+		height: 61px;
+		background: var(--BCK-dtf-header);
+		color: var(--font-color-main);
+	/*     overflow: hidden; */
+/* 		border-bottom: 1px solid rgb(83,78,78); */
+		border: unset;
+	/*     box-shadow: 0px 11px 17px rgb(41,56,71); */
+	}
+	.site-header {
+		background: rgb(41,56,71);
+		color: var(--font-color-main);
+	/*     overflow: hidden; */
+	/*     box-shadow: 0px 11px 17px rgb(41,56,71); */
+	}
+
+	.site-header .popover__content {
+		background: rgb(0,0,0);
+		color: red;
+		border-radius: var(--radius-main);
+	}
+	.site-header .popover-title__label {
+		color: rgb(197,198,197);
+	}
+	.site-header .popover__content a {
+		color: var(--font-color-main);
+	}
+
+
+	/* Тень хеадера. Сугубо для красоты */
+	.site-header-container:before {
+		display: block;
+		content: '';
+		width: 100%;
+		height: 30px;
+		position: fixed;
+		top: 31px;
+		box-shadow: 0px 10px 17px rgb(12,16,20);
+	}
+	/* Полоска прогресса */
+	.site-header-progressbar {
+		height: 1px;
+/* 		display: none; */
+	}
+	.site-header-progressbar__overlay {
+		background: rgb(10, 10, 10);
+	}
+	.site-header-progressbar__runner {
+		background: unset;
+		box-shadow: var(--box-shadow-main);
+	}
+	
+	/* Правка высоты хеадера.
+	Часть элементов больше/меньше,
+	поэтому бордер/тень выглядели-бы покусанными */
+	.site-header__item {
+		height: 60px;
+	}
+	
+	/* Кружок оповещений о банах, новых комментариев и т.п */
+	.head-notifies__badge {
+		color: var(--font-color-main);
+		background: rgb(113,7,63);
+		border: 2px solid rgb(230,85,136);
+		border-radius: 50%;
+	/*     padding: 3px; */
+	}
+	
+	/* Аватарка в шапке DTF */
+	.site-header__item .navigation-user-profile__avatar-image {
+		width: 40px;
+		height: 40px;
+		border-radius: 40px;
+		border: 2px solid rgb(94,94,94);
+	}
+
+	/* Поле поиска */
+	.search__field {
+		left: -120px;
+	}
+	.search__field .v-field__wrapper {
+		background: rgb(0, 0, 0);
+	/* 	background: rgb(36,36,36); */
+		border-radius: 3px;
+	/*     border: var(--Second-border); */
+		box-shadow: var(--box-shadow-main);
+		border: unset;
+		height: 44px;
+	}
+	/* Иконка */
+	.search__field .v-field__icon svg {
+		fill: var(--font-color-main);
+	}
+	/* Плейсхолдер */
+	.search__field .v-field:not(.v-field--focused) .v-field__wrapper:not(:hover) .v-text-input__input::-webkit-input-placeholder,
+	.search__field .v-field:not(.v-field--focused) .v-field__wrapper:hover .v-text-input__input::-webkit-input-placeholder {
+		color: var(--font-color-main);
+	}
+	/* Когда поле поиска сфокусировано (выбрано) */
+	.search__field .v-field--focused .v-field__wrapper {
+		background: rgb(0,0,0);
+	}
+	.search__field .v-field--focused .v-text-input__input {
+		color: var(--font-color-main) !important;
+	}
+
+	/* Ховер поля поиска */
+	.search__field .v-field:not(.v-field--focused) .v-field__wrapper:hover {
+		background: rgb(70, 39, 51) !important;
+		color: var(--font-color-main) !important;
+		box-shadow: 0px 0px 0px 1px rgb(104, 1, 68);
+		border: unset;
+	/*     border: 1px solid rgb(66,66,66); */
+		border-radius: var(--radius-main);
+	}
+
+	/* Кнопка "Новая статья" */
+	.navigation-create {
+		left: -255px;
+	}
+	.navigation-create > button {
+		background: rgb(0, 0, 0);
+		color: var(--font-color-main);
+		box-shadow: var(--box-shadow-main) !important;
+		border-radius: var(--radius-main);
+		height: 44px;
+	}
+	.navigation-create > button:hover {
+		background: rgb(1,70,70);
+	}
+
+}
+@-moz-document domain("dtf.ru") {
+	/* МЕНЮ АККАУНТА */
+	.account-menu-root {
+		background: var(--bck-second) !important;
+		color: var(--font-color-main);
+		border-radius: var(--radius-main);
+		box-shadow: var(--box-shadow-main);
+	}
+	/* Карточка пользователя */
+	.account-menu-root .account-menu__user-card {
+		color: var(--font-color-main);
+	}
+	.account-menu-root .account-menu__user-card:hover {
+		color: rgb(142, 232, 193);
+	}
+	/* Итем меню */
+	.account-menu .account-menu__item-wrapper {
+		padding: unset;
+	}
+	.account-menu .account-menu__item {
+		color: var(--font-color-main);
+		padding: unset;
+		margin: 10px 0px 0px 0px;
+	}
+	.account-menu .account-menu__item:hover {
+		color: rgb(142, 232, 193);
+	}
+}
+@-moz-document domain("dtf.ru") {
+	/* ОСНОВА СТРАНИЦЫ */
+	.main.layout {
+		background: var(--bck-main) !important;
+		color: var(--font-color-main);
+	}
+	/*Главный фон статьи и комментариев.
+	В общем, всей центральной колонки.  */
+	.l-island-bg {
+		background: var(--bck-main) !important;
+		color: var(--font-color-main);
+	}
+	.content-header-label {
+		background: unset;
+	}
+
+	/* Фон виджета вакансий.
+	Можно полностью его отключить */
+	.vacancies_widget {
+		background: var(--bck-main);
+		color: rgb(194,219,212);
+	/*     display: none; */
+	}
+	/* Остальные правки виджета вакансий */
+	.vacancies_widget__title {
+/* 		color: rgb(0,158,255); */
+		font-weight: 600;
+		color: var(--link-main-color);
+	}
+	.vacancies_widget__title:hover {
+/* 		color: rgb(0,188,255); */
+		color: var(--link-main-color-hover);
+		border: unset;
+	}
+
+	.vacancies_widget__item__title,
+	.vacancies_widget__load_more,
+	.vacancies_widget__all {
+		color: rgb(194,219,212);
+	}
+	.vacancies_widget__item__title:hover,
+	.vacancies_widget__load_more:hover,
+	.vacancies_widget__all:hover {
+		color: rgb(229,255,248);
+	}
+
+	.vacancies_widget__item__company,
+	.vacancies_widget__item__city{
+		color: rgb(192,217,177);
+	}
+	.vacancies_widget__item__company:hover,
+	.vacancies_widget__item__city:hover {
+		color: rgb(226,249,212);
+	}
+
+	.vacancies_widget__new {
+		background: rgb(54,64,61);
+		border: 1px solid rgb(77,76,76);
+	}
+	.vacancies_widget__new:hover {
+		background: rgb(67,77,73);
+	}
+	
+	/* Скроллбар */
+	body::-webkit-scrollbar {
+		width: var(--scrollbar-main-width);
+		background: var(--scrollbar-main-bck);
+		border: var(--scrollbar-main-border);
+	}
+
+	body::-webkit-scrollbar-track-piece {
+		background: unset;
+		margin-top: 3px;
+		margin-bottom: 3px;
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background: var(--scrollbar-main-thumb-bck);
+		border-radius: var(--scrollbar-main-thumb-radius);
+		border: var(--scrollbar-main-thumb-border);
+	}
+	body::-webkit-scrollbar-thumb:hover {
+		background: var(--scrollbar-main-thumb-bck-hover);
+	}
+
+}
+@-moz-document domain("dtf.ru") {
+	/* ПОДСАЙТ (Вкладка "Статьи") */
+	
+	/* Кнопка "..." */
+	.subsite-header .etc_control {
+		color: var(--font-color-main);
+	}
+	.subsite-header .etc_control:hover {
+		color: var(--link-main-color-hover);
+	}
+	
+	/* Фон */
+	.v-header-cover {
+		background-color: var(--bck-main);
+	}
+	
+	/* Аватарка */
+	.subsite-header .v-header-avatar {
+		border: 4px solid rgb(0,0,0);
+		--border-width: unset;
+		border-radius: var(--radius-main);
+		border-radius: 50%;
+	}
+	.subsite-header .v-header-avatar {
+		background-color: var(--bck-main);
+	}
+	
+	/* Карточка автора статьи */
+/* 	.subsite-card__messenger {
+		background: rgb(136,36,36);
+		color: var(--font-color-main);
+		box-shadow: var(--box-shadow-main);
+		border-radius: var(--radius-main);
+	}
+	.subsite-card__messenger:hover {
+		background: rgb(45,45,45);
+		box-shadow: var(--box-shadow-main);
+	} */
+	
+	/* Вид ссылки в описании */
+/* 	.subsite-card__description a {
+		color: rgb(0,158,255);
+		font-weight: 600;
+		border: unset;
+	} */
+	
+	/* Описание подсайта (текст) */
+	.v-header-description {
+		color: var(--font-color-main);
+		font-weight: 300;
+	}
+	/* Описание подсайта (ссылка) */
+	.v-header-description a {
+		color: rgb(0,158,255) !important;
+		border: unset !important;
+		font-weight: 500;
+	}
+	
+	/* Описание на странице рейтинга ??? */
+	.subsite_head__description {
+		color: var(--font-color-main);
+	}
+	.subsite_head__description a {
+		color: var(--link-main-color);
+		font-weight: 600;
+		border: unset;
+	}
+	.subsite_head__description a:hover {
+		color: var(--link-main-color-hover);
+		border: unset;
+	}
+	
+	.table__row {
+		padding: unset !important;
+		margin: 0px 0px 15px 0px;
+	}
+	.table__cell .v-button {
+		border-radius: 50%;
+		height: 44px;
+	}
+	
+	.subsite:hover :is(.subsite__name, .subsite__rank) {
+		color: var(--link-main-color-hover);
+	}
+	
+	/* Репутация */
+	.subsite-card__author-info .v-number-change--positive {
+		color: var(--positive-text-color);
+	}
+	.subsite-card__author-info .v-number-change--negative {
+		color: var(--negative-text-color);
+	}
+	/* Количество пользователей */
+	.v-header-stat {
+		color: var(--font-color-second);
+	}
+	
+	/* Кнопка "Новая запись" */
+	.mini-editor__button {
+		background: unset;
+		color: var(--font-color-second);
+	}
+	.mini-editor__button:hover {
+		color: rgb(153, 243, 188);
+	}
+	/* плейсхолдер */
+	.mini-editor__placeholder {
+		color: var(--font-color-second);
+	}
+	
+	/* Кнопки "Популярное", "Свежее" и т.п. */
+	.ui-rounded-button__link {
+		background: unset !important;
+		color: var(--font-color-main);
+	}
+	.ui-rounded-button__link:hover {
+		color: rgb(153, 252, 226);
+	}
+	
+	/* Иконка "закреплено" */
+	.content-header-pin {
+		color: rgb(218,218,218);
+	}
+	
+	/* Иконка "репост" */
+	.content-header-repost {
+		color: rgb(218,218,218);
+	}
+	
+	/* Вкладки Статьи - Комментарии - Подробнее */
+	.v-tabs {
+		background: rgb(20,24,48);
+	}
+	.v-tabs__content a {
+		color: rgb(218,218,218);
+	}
+	.ui-tab--active span {
+		color: var(--font-color-main) !important;
+	}
+	
+	/* Текст вкладок */
+	.v-tabs .v-tab__label {
+		color: var(--menu-font-color);
+	}
+	.ui-tab:hover {
+		color: var(--menu-item-color-hovered);
+	}
+	
+	/* Кнопка "Фильтры" (меню) */
+	.ui-filters .popover {
+		background: var(--menu-bck);
+		box-shadow: var(--menu-box-shadow);
+		border-radius: var(--radius-main);
+	}
+	.ui-filters .popover .popover-item {
+		padding: 0px 5px 0px 5px;
+	}
+	.ui-filters .popover .popover-item__label:hover {
+		color: var(--menu-item-color-hovered);
+	}
+	
+	/* Текст "Подписчики" */
+	.subsite-sidebar .v-island__title {
+		color: var(--font-color-main);
+	}
+
+	/* Количество подписчиков */
+	.subsite-sidebar .v-island__counter {
+		color: rgb(218,218,218);
+	}
+
+	.v-header-actions button {
+		background: rgb(39,36,36);
+		color: rgb(218,218,218);
+		border: 1px solid rgb(70,70,70);
+		border-radius: var(--radius-main);
+	}
+	
+	/* Боковая панель подсайта */
+	div[id='page_wrapper'] .l-page__sidebar {
+		width: 345px;
+	}
+	
+	/* Правила подсайта */
+	div[id='page_wrapper'] .subsite-sidebar .v-list--text .v-list__item {
+		max-height: 200px;
+		overflow-y: scroll;
+		align-items: baseline;
+	}
+	div[id='page_wrapper'] .subsite-sidebar .v-list--text .v-list__item .v-list__label {
+		padding-right: 10px;
+	}
+	
+	/* и его скроллбар */
+	div[id='page_wrapper'] .subsite-sidebar .v-list--text .v-list__item::-webkit-scrollbar {
+		width: 8px;
+		background: rgb(41,56,71);
+		border-radius: var(--radius-main);
+		border: 1px solid rgb(46, 63, 80);
+	}
+	div[id='page_wrapper'] .subsite-sidebar .v-list--text .v-list__item::-webkit-scrollbar-track-piece {
+		background: unset;
+		margin-top: 4px;
+		margin-bottom: 4px;
+	}
+	div[id='page_wrapper'] .subsite-sidebar .v-list--text .v-list__item::-webkit-scrollbar-thumb {
+		background: rgba(227,209,228,0.7);
+		border-radius: var(--radius-main);
+		border: 1px solid black;
+	}
+	div[id='page_wrapper'] .subsite-sidebar .v-list--text .v-list__item::-webkit-scrollbar-thumb:hover {
+		background: rgb(203,207,234);
+	}
+	
+	/* Теги (меню) */
+	.ui-hashtags .popover {
+		box-shadow: var(--menu-box-shadow);
+		border-radius: var(--radius-main);
+		background: var(--bck-second);
+	}
+	.ui-hashtags .popover .popover-item {
+		padding: 0px 5px 0px 5px;
+	}
+	.ui-hashtags .popover .popover-item__label:hover {
+		color: var(--menu-item-color-hovered);
+	}
+	.subsite-sidebar .v-list__image {
+		border-radius: 50%;
+		background-color: var(--bck-second);
+	}
+	
+	/* Репост (меню) */
+	.v-repost .popover {
+		background: black;
+		color: var(--font-color-main);
+		border-radius: var(--radius-main);
+		box-shadow: var(--box-shadow-main);
+	}
+	
+	/* Кнопка "Показать всех" */
+	.v-list__more {
+		color: var(--link-main-color);
+		font-weight: 500;
+	}
+	.v-list__more:hover {
+		color: var(--link-main-color-hover);
+	}
+	/* Кнопка "Показать всё" */
+	.v-list-subsites__more {
+		color: var(--link-main-color);
+		font-weight: 500;
+	}
+	.v-list-subsites__more:hover {
+		color: var(--link-main-color-hover);
+		font-weight: 500;
+	}
+/* 	.ui-hashtags .popover .popover__scrollable {
+		?
+	} */
+}
+@-moz-document domain("dtf.ru") {
+	/* ПОДСАЙТ (Вкладка "Комментарии") */
+	
+	/* Заголовок статьи с комментарием */
+	.profile_comment_favorite__title {
+		color: var(--font-color-main);
+	}
+	.profile_comment_favorite__title:hover {
+		color: var(--font-color-main-hover);
+	}
+	
+	/* Имя автора */
+	.profile_comment_favorite__user__name {
+		color: var(--font-color-main-hover);
+		font-weight: 600;
+	}
+	
+	/* Дата комментария */
+	.profile_comment_favorite__date .time {
+		color: var(--font-color-second);
+	}
+	.profile_comment_favorite__date .time:hover {
+		color: var(--font-color-second-hover);
+	}
+	
+	.profile_comment_favorite__footer__reply {
+		color: var(--Main-textButtons-color);
+	}
+	.profile_comment_favorite__footer__reply:hover {
+		color: var(--Main-textButtons-color-hover);
+	}
+	
+	.profile_comment_favorite__footer .bookmark.bookmark--type-comment .icon {
+		fill: var(--Main-textButtons-color);
+		display: none;
+	}
+	
+	.profile_comment_favorite__footer .bookmark.bookmark--type-comment:after {
+		display: block;
+		content: '📑'; /* 🔖  📑  📓 */
+		color: var(--Main-textButtons-color);
+		box-shadow: 0px 0px 2px 1px var(--Main-textButtons-color);
+		border-radius: 50%;
+		text-align: center;
+		line-height: 19px;
+		width: 19px;
+		font-size: 13px;
+		text-indent: 0.2px;
+	}
+	.profile_comment_favorite__footer .bookmark.bookmark--type-comment:hover:after {
+		color: var(--Main-textButtons-color-hover);
+		box-shadow: 0px 0px 2px 1px var(--Main-textButtons-color-hover);
+	}
+	
+	/* Добавленная закладка */
+	.profile_comment_favorite__footer .bookmark.bookmark--type-comment.bookmark--active .icon {
+		color: var(--Main-textButtons-color) !important;
+		fill: var(--Main-textButtons-color) !important;
+		display: none;
+	}
+	.profile_comment_favorite__footer .bookmark.bookmark--type-comment.bookmark--active:after {
+		display: block;
+		content: '📑';
+		color: rgb(255, 0, 111);
+		box-shadow: 0px 0px 2px 1px rgb(255, 0, 111);
+		border-radius: 50%;
+		text-align: center;
+		line-height: 19px;
+		width: 19px;
+		font-size: 13px;
+		text-indent: 0.2px;
+	}
+	.profile_comment_favorite__footer .bookmark.bookmark--type-comment.bookmark--active:hover:after {
+		color: rgb(246, 83, 154);
+		box-shadow: 0px 0px 2px 1px rgb(246, 83, 154);
+	}
+	
+	
+	
+	
+	
+	
+	.profile_comment_favorite__footer .etc_control .icon {
+		fill: var(--Main-textButtons-color);
+	}
+}
+@-moz-document domain("dtf.ru") {
+	/* ПОДСАЙТ (Вкладка "Подробнее") */
+	
+	/* Навигация */
+	/* Активная */
+	.v-list-tab--active {
+		background: var(--bck-third);
+		border-radius: var(--radius-main);
+		box-shadow: var(--box-shadow-main);
+	}
+	.v-list-tab__icon {
+		color: var(--menu-font-color);
+	}
+	
+	.v-list-tab--active .v-list-tab__icon {
+		color: var(--menu-font-color);
+	}
+	/* ховер */
+	.v-list-tab:hover {
+		background: var(--bck-second);
+		border-radius: var(--radius-main);
+		box-shadow: var(--box-shadow-main);
+	}
+}
+@-moz-document domain("dtf.ru") {
+	/* СТРАНИЦА ВАКАНСИЙ */
+	
+	.vacancies-bot {
+		background: var(--bck-second);
+	}
+	
+/* 	.v-field__wrapper {
+		background: rgb(0, 0, 0);
+		border-radius: 3px;
+		box-shadow: var(--box-shadow-main);
+		border: unset;
+		height: 44px;
+		color: rgb(255, 255, 255);
+	}
+	.v-field__wrapper:hover {
+		background: rgb(81, 81, 81);
+	} */
+}
+@-moz-document domain("dtf.ru") {
+	/* OTHER */
+	
+	/* Bye, ads */
+	div[class^='dstr'] {
+		display:none !important;
+	}
+	
+	/* Общий вид всех кнопок. Отдельные надстройки кнопок, чуть меняют их в определённых местах в DTF */
+	.v-button {
+		background: var(--button-bck);
+		border-radius: var(--radius-main);
+		box-shadow: var(--box-shadow-main);
+		color: var(--button-font-color);
+	}
+	.v-button:hover {
+		background: var(--button-bck-hover);
+		box-shadow: var(--box-shadow-main);
+	}
+	
+	/* NSFW */
+	/* Текст-предупреждение об 18+ */
+	.content-adult__text {
+		font-size: 0px;
+	}
+	.content-adult__text:after {
+		display: block;
+		content: 'R 18+';
+		color: var(--button-font-color);
+		border-radius: var(--Main-border);
+		font-size: 20px;
+		text-shadow: 0px 0px 3px rgb(0 0 0);
+		width: unset;
+		height: unset;
+		line-height: 0px;
+		padding: 10px;
+		box-shadow: inset 0px 0px 16px 1px rgb(0 0 0 / 33%);
+	}
+	
+	/* Эффект цензурирования изображения */
+	.content--short.content--is-visible-blur .content-container {
+		-webkit-filter: blur(35px);
+		filter: blur(35px);
+		-webkit-transform: unset;
+		transform: unset;
+	}
+	/* и кнопки */
+	.content-adult__buttons .v-button {
+/* 		background: var(--button-bck);
+		color: var(--button-font-color);
+		border-radius: var(--radius-main); */
+		margin: unset;
+		padding: 0px 10px 0px 10px;
+		width: -webkit-fill-available;
+	}
+	.content-adult__buttons .v-button:hover {
+/* 		background: var(--button-bck-hover); */
+	}
+	
+	.content-adult__buttons {
+		display: grid;
+		justify-content: center;
+		margin-top: 17px;
+		grid-gap: 20px;
+		grid-template-rows: repeat(1, auto);
+		align-items: end;
+		justify-items: center;
+		grid-auto-rows: minmax(100px, auto);
+	}
+	
+	.content-adult__buttons .v-button+.v-button {
+		margin: unset;
+	}
+	
+	/* Best comments */
+	.widget_wrapper--type-blue {
+		background: unset;
+	}
+	.widget_comment__label {
+		color: var(--font-color-second);
+	}
+	.widget_comment__likes {
+		color: var(--positive-text-color)
+	}
+}
+@-moz-document domain("dtf.ru") {
+/*  СТАТЬИ (ХЕАДЕР)  */
+
+	/* Аватар */
+	.content-header-author__avatar {
+		border-radius: 50%;
+	}
+	/* Подсайт */
+	.content-header-author--subsite .content-header-author__name {
+		color: var(--Subsite-color);
+	}
+	.content-header-author--subsite .content-header-author__name:hover {
+		color: var(--Subsite-color-hover);
+	}
+	/* Имя автора */
+	.content-header-author--user .content-header-author__name {
+		color: var(--Author-color);
+		font-weight: 500;
+	}
+	.content-header-author--user .content-header-author__name:hover {
+		color: var(--Author-color-hover);
+	}
+
+	/* Дата создания статьи, кнопка "..." */
+	.content-header-number .time {
+		color: var(--font-color-second);
+	}
+	.content-header-number .time:hover {
+		color: var(--font-color-second-hover);
+	}
+	.content-header__item .etc_control {
+		color: var(--font-color-main);
+	}
+	.content-header__item .etc_control:hover {
+		color: rgb(165,229,214);
+	}
+	
+	/* Просмотры */
+	.views__value,
+	.views__label {
+		color: var(--Main-textButtons-color);
+	}
+}
+@-moz-document domain("dtf.ru") {
+	/* СТАТЬИ (ФУТЕР) */
+	
+	/* Оповещение при положительном оценивании статьи */
+	.floating-popup .bubble {
+		background: var(--bck-second) !important;
+		color: var(--font-color-main);
+		border-radius: var(--radius-main);
+		box-shadow: var(--menu-box-shadow);
+	}
+	/* и кнопка закрытия оповещения */
+	.floating-popup .bubble .bubble__close {
+		color: var(--font-color-main);
+	}
+	.floating-popup .bubble .bubble__close:hover {
+		color: rgb(234, 188, 188);
+	}
+
+	/* "Спасибо за наводку" */
+	.content__thanks {
+		background: rgb(41, 41, 59);
+		border-radius: var(--radius-main);
+		border: 1px solid rgb(107,107,107);
+		color: rgb(245,243,243);
+		font-size: 0px;
+		line-height: 15px;
+		padding: 5px 5px 2px 5px;
+	}
+	.content__thanks a > span {
+		color: rgb(226, 216, 233);
+		font-size: 12px;
+	}
+	.content__thanks:before {
+		display: block;
+		content: 'Спасибо за наводку,';
+		color: rgb(255, 255, 255);
+		font-size: 15px;
+	}
+	.content__thanks a > span:hover {
+		color: rgb(156,202,207);
+	}
+
+	/* Кнопки в конце статьи.
+	Комментарии, закладка, и т.п. */
+	.comments_counter__count,
+	.v-repost__button,
+	.v-shares__button {
+		color: var(--Main-textButtons-color) !important;
+		fill: var(--Main-textButtons-color) !important;
+	}
+	.comments_counter__count:hover,
+	.v-repost__button:hover,
+	.v-shares__button:hover {
+		color: var(--Main-textButtons-color-hover) !important;
+		fill: var(--Main-textButtons-color-hover) !important;
+	}
+
+/* 	.bookmark:hover:not(.bookmark--just_clicked) .icon {
+		color: var(--Main-textButtons-color-hover) !important;
+		fill: var(--Main-textButtons-color-hover) !important;
+	} */
+	
+	/* Не добавленная закладка */
+	.bookmark.bookmark--type-content .icon {
+		fill: var(--Main-textButtons-color);
+		display: none;
+	}
+	/* Новая иконка закладки */
+	.bookmark.bookmark--type-content:after {
+		display: block;
+		content: '📑'; /* 🔖  📑  📓 */
+		color: var(--Main-textButtons-color);
+		box-shadow: 0px 0px 2px 1px var(--Main-textButtons-color);
+		border-radius: 50%;
+		text-align: center;
+		line-height: 22px;
+		width: 22px;
+		font-size: 15px;
+		text-indent: 0.2px;
+	}
+	.bookmark.bookmark--type-content:hover:after {
+		color: var(--Main-textButtons-color-hover);
+		box-shadow: 0px 0px 2px 1px var(--Main-textButtons-color-hover);
+	}
+	
+	/* Добавленная закладка */
+	.bookmark.bookmark--type-content.bookmark--active .icon {
+		color: var(--Main-textButtons-color) !important;
+		fill: var(--Main-textButtons-color) !important;
+		display: none;
+	}
+	/* Новая иконка закладки */
+	.bookmark.bookmark--type-content.bookmark--active:after {
+		display: block;
+		content: '📑';
+		color: rgb(255, 0, 111);
+		box-shadow: 0px 0px 2px 1px rgb(255, 0, 111);
+		border-radius: 50%;
+		text-align: center;
+		line-height: 22px;
+		width: 22px;
+		font-size: 15px;
+		text-indent: 0.2px;
+	}
+	.bookmark.bookmark--type-content.bookmark--active:hover:after {
+		color: rgb(246, 83, 154);
+		box-shadow: 0px 0px 2px 1px rgb(246, 83, 154);
+	}
+
+	/* Кнопки оценок */
+	.content-footer .vote__button {
+		color: var(--Main-textButtons-color);
+	}
+	.content-footer .vote__button:hover {
+		color: var(--Main-textButtons-color-hover) !important;
+	}
+
+	/* Оценки */
+	/* Актуальная оценка */
+	.vote.vote--sum-positive .vote__actual-value {
+		color: var(--positive-text-color);
+		font-weight: 500;
+	}
+	.vote.vote--sum-negative .vote__actual-value {
+		color: var(--negative-text-color);
+		font-weight: 600;
+	}
+	
+	/* Сделанная оценка */
+	.vote.vote--voted-positive .vote__button--plus {
+		color: var(--positive-text-color);
+		border-radius: 50%;
+		box-shadow: var(--box-shadow-main-2);
+	}
+	.vote.vote--voted-negative .vote__button--minus {
+		color: var(--negative-text-color);
+	}
+	
+	/* Карточка автора */
+	.subsite-card__author-info {
+		background: unset;
+	}
+	/* Имя автора */
+	.subsite-card-title {
+		color: var(--Author-color);
+	}
+	.subsite-card-title:hover {
+		color: var(--Author-color-hover);
+	}
+	/* Описание */
+	.subsite-card__description {
+		color: var(--font-color-second);
+	}
+	/* и ссылка в описании */
+	.subsite-card__description a {
+		color: var(--link-main-color);
+		border: unset;
+		font-weight: 600;
+	}
+	.subsite-card__description a:hover {
+		color: var(--link-main-color-hover);
+	}
+	
+	/* DTF Plus Badge */
+	.v-plus-badge--dtf {
+		background: rgb(189, 251, 241);
+		color: rgb(0, 0, 0);
+	}
+	
+
+	/* Кнопка "Подписаться" */
+	.v-subscribe-button__subscribe {
+		background: var(--button-bck);
+		color: var(--font-color-main);
+		box-shadow: var(--box-shadow-main);
+		border-radius: var(--radius-main);
+	}
+	.v-subscribe-button__subscribe:hover {
+		background: var(--button-bck-hover);
+		color: var(--font-color-main);
+		box-shadow: var(--box-shadow-main);
+		border-radius: var(--radius-main);
+	}
+
+
+}
+@-moz-document domain("dtf.ru") {
+/*  ВЛОЖЕНИЯ СТАТЕЙ  */
+
+	/* Размер изображений в статье.
+	Подогнано под ширину текста. */
+	.figure-image .andropov_image {
+		display: grid;
+		justify-content: center;
+	}
+	.figure-image .andropov_image img {
+		max-width: var(--Main-width);
+	}
+	
+	.content-image .figure-image {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+	.content-image .figure-image img {
+		max-width: var(--Main-width);
+	}
+
+	/* Изображение в ссылке DTF */
+	:not(.app--live-forcibly-collapsed) .content-container .andropov_image {
+		max-width: var(--Main-width) !important;
+	}
+
+
+	/* Размер YT видео в статье.
+	Подогнано под ширину текста. */
+	.andropov_video.andropov_video--service-youtube {
+		max-width: calc(100% - 130px) !important;
+		margin: 0px 0px 0px 65px;
+		padding: unset;
+	}
+
+/* 	.andropov_video video {
+		width: var(--Main-width);
+		margin-left: 65px;
+	} */
+	.andropov_video__container {
+		width: var(--Main-width);
+	}
+
+	.block-audio {
+		border: unset;
+	}
+	
+	/*  Цитата  */
+	.block-quote {
+		margin: 30px 0px 30px 40px;
+		background: rgb(40,43,54);
+		padding: 10px 10px 10px 20px;
+		border-radius: var(--radius-main);
+		max-width: 520px;
+	}
+	/* Текст */
+	.block-quote__text p {
+		font-size: 20px;
+	/*     font-family: 'EB Garamond', serif; */
+	/*     font-family: 'Philosopher', sans-serif; */
+		font-family: 'Inter', sans-serif;
+	/* 	font-family: 'EB Garamond', serif; */
+	}
+	/* Новая кавычка */
+	.block-quote__content:before {
+		content: '“';
+		display: block;
+		font-size: 93px;
+		color: rgb(253,253,253, 0.3);
+		font-family: 'Volkhov', serif;
+		margin: 30px 0px 0px -20px;
+		position: relative;
+	}
+	/* Отключение дефолтной кавычки */
+	.block-quote__content > svg {
+		display: none;
+	}
+	/* и подпись автора */
+	.block-quote__author b {
+		color: rgb(187,241,220);
+		font-size: 15px !important;
+		font-weight: 400;
+	}
+	.block-quote__author {
+		color: rgb(198,215,209);
+		font-size: 15px !important;
+		font-weight: 400;
+	}
+
+	/* Блок кода */
+	.block-code {
+		background: rgb(40,43,54);
+		color: var(--font-color-main);
+		border-radius: 3px;
+		border: unset !important;
+		box-shadow: 0px 0px 1px 1px rgb(81,81,81);
+	}
+	.hljs-keyword, .hljs-selector-tag, .hljs-type {
+		color: rgb(135, 190, 241);
+	}
+	.hljs-title, .hljs-attr, .hljs-selector-id, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo {
+		color: rgb(207, 177, 236);
+	}
+	.hljs-string {
+		color: rgb(251, 237, 168);
+	}
+	.hljs-attribute {
+		color: rgb(0, 134, 179);
+	}
+	.hljs-number {
+		color: rgb(167, 247, 167);
+	}
+
+	.block-warning {
+		background: unset;
+	}
+
+	/* Голосование */
+	.quiz {
+		background: var(--bck-second);
+		border-radius: var(--radius-main);
+		padding: 15px 20px 10px 20px;
+	}
+	.quiz__item {
+		margin: 5px 0px 0px 0px;
+		padding: unset;
+		min-height: 20px;
+	}
+	.quiz__item__label {
+		margin: unset;
+	}
+	.quiz__item__label span {
+		top: 0px;
+		position: relative;
+	}
+	.quiz__item__check {
+		border: 2px solid rgb(23,148,229);
+		border-radius: 100%;
+		opacity: unset;
+		top: 0px;
+	}
+
+	.quiz__item__voted {
+		top: 7px;
+	}
+	.quiz__item__progressbar {
+		top: -2px;
+	}
+	.quiz__item__voted__users__item {
+		margin: -4px -4px 0px 0px;
+	}
+	.quiz__item__voted__users__item img {
+		border-radius: 50%;
+	}
+
+
+	.quiz__panel__button {
+		color: rgb(234,105,105);
+		padding-left: 30px;
+		line-height: 21px;
+		margin: -5px 0px 0px -10px;
+	}
+	.quiz__panel__button svg {
+		fill: rgb(234,105,105);
+		margin: -2px 0px 0px 10px;
+	}
+	.quiz__panel__button:hover {
+		color: rgb(232, 123, 123);
+	}
+	.quiz__panel__button__label {
+		border: unset;
+	}
+	.quiz__item__voted__count {
+		color: rgb(170,168,168);
+		font-weight: 500;
+		opacity: unset;
+	}
+
+	/* Блок номер */
+	.block-number {
+		background: rgb(40,43,54);
+		border-radius: var(--radius-main);
+	}
+
+	/* Ссылки */
+	.content .andropov_link {
+		background: rgb(40,43,54);
+		border-radius: var(--radius-main);
+		border: 1px solid red;
+	}
+	.content .andropov_link__title {
+		color: var(--Main-link-title);
+	}
+	.andropov_link__host,
+	.andropov_link__host svg {
+		color: var(--font-color-main) !important;
+	}
+
+	/* Твиты */
+	.andropov_tweet {
+		background: rgb(24,61,77);
+		border-radius: var(--radius-main);
+		box-shadow: var(--box-shadow-main);
+		border: unset;
+	}
+	.andropov_tweet__header {
+		background: rgb(51,51,51);
+		border-radius: var(--radius-main);
+		box-shadow: var(--box-shadow-main);
+		border: unset;
+	}
+
+	.andropov_tweet__media {
+		background: rgb(51,51,51);
+		padding: 0px 0px 10px 0px;
+		margin: unset !important;
+	}
+
+
+	.andropov_tweet__user__name {
+		color: rgb(3,209,208) !important;
+	}
+	.andropov_tweet__user__nickname {
+		color: rgb(3,209,208) !important;
+	}
+
+	.andropov_tweet__date time {
+		color: var(--font-color-main);
+	}
+	.andropov_tweet__date time:hover {
+		color: var(--font-color-main);
+	}
+
+	.andropov_tweet__text {
+		background: rgb(51,51,51);
+		color: var(--font-color-main);
+		padding: 0px 0px 10px 20px;
+	}
+	.andropov_tweet__text a {
+		color: rgb(69,198,245);
+		border: unset;
+	}
+	.andropov_tweet__text a:hover {
+		color: rgb(109,210,247);
+		border: unset;
+	}
+
+	.andropov_tweet .gall {
+		display: grid;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+		justify-items: center;
+		grid-template-columns: repeat(3, auto);
+		gap: 14px;
+		grid-template-rows: max-content;
+		padding: 10px 0px 0px 0px;
+		background: unset;
+	}
+
+	.andropov_tweet .gall__item {
+		max-width: 300px;
+		max-height: 300px;
+		width: 180px;
+		height: 180px;
+		box-shadow: 0px 0px 4px 1px rgb(0, 0, 0);
+		border-radius: var(--radius-main);
+		margin: unset;
+		background-color: rgb(0, 0, 0) !important;
+
+		background-size: 100%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		position: unset;
+		border: unset;
+	}
+	.andropov_tweet .gall__item:hover {
+		box-shadow: 0px 0px 4px 1px rgb(10,73,50);
+	}
+	.andropov_tweet .gl__image {
+		min-width: unset;
+		min-height: unset;
+	}
+	.andropov_tweet .gall__item::after {
+		background: unset !important;
+	}
+
+
+	/* Текст под вложением */
+	.content figcaption {
+		margin: 0px 0px 0px 0px !important;
+		color: rgb(187,241,220);
+		font-size: 13px !important;
+		text-align: center;
+	}
+
+
+	/* .content .andropov_tweet__header,
+	.content .andropov_tweet__text {
+		background: rgb(24,61,77);
+	} */
+	.content .andropov_tweet__user__nickname {
+		color: rgb(89,131,166);
+	}
+
+	/* Альбом */
+	.figure-gallery {
+		display: flex;
+		justify-content: center;
+	}
+	.figure-gallery .gall {
+		display: grid;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+		justify-items: center;
+		grid-template-columns: repeat(3, auto);
+		gap: 14px;
+		grid-template-rows: max-content;
+		padding: 10px 0px 10px 0px;
+		background: var(--bck-second);
+		border-radius: var(--radius-main);
+		width: var(--Main-width);
+	}
+
+	/* .gall__item {
+		position: unset;
+		background-size: 100%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		-webkit-box-shadow: unset;
+		box-shadow: unset;
+		cursor: pointer;
+	} */
+	.figure-gallery .gall__item {
+		max-width: 300px;
+		max-height: 300px;
+		width: 180px;
+		height: 180px;
+		box-shadow: 0px 0px 4px 1px rgb(0, 0, 0);
+		border-radius: var(--radius-main);
+		margin: unset;
+		background-color: rgb(0, 0, 0) !important;
+
+		background-size: 100%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		position: unset;
+		border: unset;
+	}
+	.figure-gallery .gall__item:hover {
+		box-shadow: 0px 0px 4px 1px rgb(10,73,50);
+	}
+	.figure-gallery .gl__image {
+		min-width: unset;
+		min-height: unset;
+	}
+	.figure-gallery .gall__item::after {
+		background: var(--bck-third) !important;
+		color: var(--font-color-main) !important;
+		width: 40px !important;
+		height: 40px !important;
+		position: relative !important;
+		line-height: 40px !important;
+		top: 140px !important;
+		float: right;
+		font-size: 20px !important;
+		box-shadow: var(--box-shadow-main);
+		border-bottom-right-radius: var(--radius-main);
+	}
+
+
+
+
+
+
+
+	/* Эмбед DTF статьи */
+	.content--embed {
+		background: rgb(0,0,0);
+		border-radius: var(--radius-main);
+		box-shadow: var(--box-shadow-main);
+	/*     border: 1px solid rgb(115,101,101); */
+		border: unset;
+	}
+	.content--embed .content-header__info {
+	/*     position: relative; */
+	/*     margin-right: -120px !important; */
+	}
+	.content--embed .content-header-author--subsite {
+		margin: unset !important;
+	}
+/* 	.content-header-author--user {
+		color: rgb(3,209,208) !important;
+	}
+
+	.content-header-number time {
+		color: rgb(55,255,255);
+	}
+	.content-number time:hover {
+		color: var(--font-color-main);
+	} */
+
+	.content--embed:hover {
+		background: rgb(41,40,40);
+	}
+
+	.block-incut {
+		background: unset;
+	}
+	
+	/* I frame */
+	.andropov_iframe {
+		border: unset;
+		box-shadow: var(--box-shadow-main);
+		border-radius: var(--radius-main);
+	}
+	
+	/* Block hidden */
+	.block-hidden-wrapper {
+		border-radius: var(--radius-main);
+	}
+	.block-hidden-wrapper:before {
+/* 		left: -1px; */
+/* 		width: calc(100% + 1px); */
+	}
+	.block-hidden {
+		background: var(--bck-second);
+		border-radius: var(--radius-main);
+	}
+	.block-hidden-wrapper::before {
+		background: var(--bck-main);
+/* 		border-radius: var(--radius-main); */
+	}
+	.block-hidden__button {
+		color: var(--link-main-color);
+	}
+	.block-hidden__button:hover {
+		color: var(--link-main-color-hover);
+	}
+	
+}
+@-moz-document domain("dtf.ru") {
+	/* КОММЕНТАРИИ (Формы написания и редактирования) */
+	
+	.comments_pseudo_form > div[class*='text'] {
+		color: rgb(232,221,221);
+		font-weight: 500;
+	}
+
+	/* Форма написания комментария */
+	.comments_form,
+	.comment-form,
+	.comments_pseudo_form {
+		background: rgb(13,22,37);
+		border-radius: 3px;
+		color: var(--font-color-main);
+		border: unset;
+		box-shadow: var(--box-shadow-third);
+	}
+	:is(.comments_form,
+	.comment-form) div[class^='thesis__placeholder'] {
+		color: var(--font-color-third);
+		font-weight: 500;
+	}
+	:is(.comments_form,
+	.comment-form,
+	.comments_pseudo_form):hover {
+		background: rgb(13,22,37);
+		border: unset;
+		box-shadow: var(--box-shadow-third-hover);
+	}
+
+	.comment-form .content_editable {
+		color: var(--font-color-main);
+	}
+	
+	.thesis__custom_button {
+		background: var(--button-bck);
+		border-radius: var(--radius-main);
+		padding: 7px 10px 7px 10px;
+		box-shadow: var(--box-shadow-main);
+		color: var(--font-color-main);
+	}
+	.thesis__custom_button:hover {
+		background: var(--button-bck-hover);
+		opacity: 1;
+	}
+	
+}
+@-moz-document domain("dtf.ru") {
+	/* КОММЕНТАРИИ (Просмотр) */
+	
+	/* Автор комментария */
+	.comment__author {
+		color: var(--Author-color);
+	}
+	.comment__avatar:hover+.comment__author, .comment__author:hover {
+		color: var(--Author-color-hover) !important;
+	}
+
+	/* Ховер кнопок вложений и "Р" */
+	:is(.thesis__upload_file.thesis__attach_something,
+	.thesis__attach_something.attacher__button):hover {
+		background: rgb(64,64,64);
+	}
+	/* Иконка кнопки "Р" */
+	.attacher__button > svg {
+		fill: rgb(97,146,151) !important;
+	}
+	/* Кнопка отправки сообщения */
+	div[data-gtm='New Comment — Sent Button — Click'].v-button--disabled {
+		background: rgb(47,6,6);
+		border-radius: var(--radius-main);
+		border: unset;
+		box-shadow: var(--box-shadow-main);
+		opacity: 1;
+	}
+	div[data-gtm='New Comment — Sent Button — Click']:not(.v-button--disabled) {
+		background: var(--button-bck);
+		border-radius: var(--radius-main);
+		border: unset;
+		box-shadow: var(--box-shadow-main);
+		opacity: 1;
+	}
+	div[data-gtm='New Comment — Sent Button — Click']:not(.v-button--disabled):hover {
+		background: var(--button-bck-hover);
+		border-radius: var(--radius-main);
+		border: unset;
+		opacity: 1;
+	}
+
+	.comment__text {
+	/*     font-family: 'M PLUS Rounded 1c', sans-serif; */
+		font-family: 'Alegreya Sans', sans-serif;
+		font-size: 17px;
+	}
+	.comment__detail {
+		font-family: 'M PLUS Rounded 1c', sans-serif;
+	/*     font-family: 'Alegreya Sans', sans-serif; */
+		font-size: 13px;
+	}
+	
+	/* Оценки комментариев */
+	.vote--comment .vote__value {
+		background: unset;
+	}
+	/* и меню проголосовавших */
+	.vote__value .popover__list {
+		color: red;
+	}
+	/* .vote__value:before {
+		background: red;
+	} */
+
+	/* .popover__content {
+		background: rgb(0,0,0);
+		border-radius: var(--radius-main) !important;
+	} */
+	.popover-item__icon,
+	.popover-item__main {
+		color: white;
+	}
+	
+	/* Древо комментариев */
+	.comment__content,
+	.comment__content:before {
+		background: rgb(18,4,33) !important;
+		color: var(--font-color-main);
+	}
+	.comment__branches,
+	.comment__branches:before,
+	.comment__branches:before {
+		background: rgb(18,4,33) !important;
+	}
+
+
+	.v-popover-container .popover {
+/* 		background: rgb(0,0,0); */
+		background: var(--bck-second);
+		border-radius: var(--radius-main);
+		box-shadow: 0px 0px 0px 1px rgb(81,81,81);
+		--item-offset-left: 10px;
+		--item-offset-right: 5px;
+		width: unset !important;
+	}
+
+	.layout__right-column {
+		background: var(--lay-right-column-bck);
+		color: var(--font-color-main);
+	}
+
+	.comment__action,
+	.comment__detail {
+		color: var(--Main-textButtons-color);
+	}
+	:is(.comment__action,
+	.comment__detail):hover {
+		color: var(--Main-textButtons-color-hover);
+	}
+	
+	.comment__icon-action,
+	.comment__copy-link {
+		color: var(--Main-textButtons-color);
+	}
+	:is(.comment__icon-action,
+	.comment__copy-link):hover {
+		color: var(--Main-textButtons-color-hover);
+	}
+	
+	.comment__edited {
+		background: rgb(253,253,253);
+		color: rgb(7,7,7);
+		padding: 1px;
+		border-radius: 15px;
+	}
+
+
+	/*  КОММЕНТАРИИ (ПРОСМОТР)  */
+
+	/* Метка комментария "Автор" */
+	.comment__detail--author {
+		color: rgb(95,194,207);
+		font-weight: 600;
+	}
+	/* Кавычки quote. Svg не даёт заменить цвета,
+	поэтому были взяты другие кавычки + шрифт.
+	Если кому-то не нравится их вид,
+	подгрузите другой шрифт. */
+	.comment-quote:before {
+		content: '“';
+		display: block;
+		font-size: 40px;
+		color: rgb(98,37,194);
+		font-family: 'Volkhov', serif;
+	}
+	.comment-quote > svg {
+		display: none;
+	}
+
+
+	.comment-quote {
+		margin: unset;
+		background: unset;
+		padding: 0px 0px 0px 20px;
+		border-radius: var(--radius-main);
+		max-width: 520px;
+	}
+	/* Новая кавычка */
+	.comment-quote:before {
+		content: '“';
+		display: block;
+		font-size: 43px;
+		color: rgb(253,253,253, 0.3);
+		font-family: 'Volkhov', serif;
+		margin: 10px 0px 0px -20px;
+		position: relative;
+	}
+	/* Отключение дефолтной кавычки */
+	.comment-quote > svg {
+		display: none;
+	}
+
+	/* Цвет ссылок в комментариях */
+	.comment__content p a {
+		color: rgb(0,158,255);
+		border: unset;
+	}
+	.comment__content p a:hover {
+		color: rgb(0,188,255);
+		border: unset;
+	}
+
+	/* Открыть ветку комментариев,
+	т.е. кнопка "N комментариев" */
+	.comment__load-more {
+		color: rgb(151,151,232);
+	}
+	.comment__load-more:hover {
+		color: rgb(166,166,255);
+	}
+	.comments__link_to_all {
+		background: black;
+	/*     border: 1px solid rgb(71,70,70); */
+		box-shadow: var(--box-shadow-main);
+		border-radius: var(--radius-main);
+	}
+	.comments__link_to_all a {
+		color: var(--link-main-color);
+		font-weight: 500;
+		border: unset !important;
+	}
+	.comments__link_to_all a:hover {
+		color: var(--link-main-color-hover);
+	}
+
+	/*Вид ветки комментариев */
+	.comment__branch {
+		border-left: var(--Main-commentBranch-left);
+		margin-left: 0px;
+	}
+	.comment__branch:not(.comment__branch--max-level):last-child::before {
+		border-color: rgb(116,116,196);
+	/*     border-width: 0px 0px 5px 2px; */
+/* 		border-left: var(--Main-commentBranch-left); */
+/* 		border-bottom: var(--Main-commentBranch-bottom); */
+		margin-left: 0px;
+		width: 5px;
+		box-shadow: -1px 1px 0px 1px white;
+		border: unset;
+	}
+
+	.comment .vote__value {
+		color: rgb(99, 166, 173);
+	}
+	.comment .vote--sum-positive .vote__value {
+		color: #07A23B;
+	}
+	.comment .vote--sum-negative .vote__value {
+		color: #E92A40;
+	}
+
+	.comment .vote__button {
+		color: rgb(99, 166, 173);
+	}
+	.comment .vote__button:hover {
+		color: rgb(113,186,194);
+	}
+
+	.vote--comment.vote--voted-positive .vote__button--plus {
+		color: var(--positive-text-color);
+	}
+	.vote--comment.vote--voted-negative .vote__button--minus {
+		color: var(--negative-text-color);
+	}
+
+	/* Кнопка перехода к новым комментариям.
+	Уменьшена и перенесена чуть правее. */
+	.comments_updates {
+		background: rgb(68,115,106);
+		width: 35px;
+		height: 35px;
+		padding: 5px;
+		margin-left: -53px;
+	}
+	.comments_updates:hover {
+		background: rgb(85,143,132);
+	}
+	.comments_updates__counter {
+		background: rgba(255, 255, 255, 0.6);
+		color: black;
+		font-weight: 500;
+	}
+	
+}
+@-moz-document domain("dtf.ru") {
+	/* КОММЕНТАРИИ (Вложения) */
+	
+	/* Загрузка вложения */
+	.andropov_uploader__preview_item__inner > div:nth-child(1) {
+		background-color: rgb(41,41,41);
+		border: unset;
+		border-radius: var(--radius-main);
+		box-shadow: var(--box-shadow-main);
+	}
+	
+	.andropov_preview__hostname {
+		color: var(--font-color-second) !important;
+	}
+	
+	.andropov_uploader__preview_item__remove {
+		background: rgb(0, 0, 0);
+		color: var(--font-color-main);
+		box-shadow: var(--box-shadow-main);
+	}
+	.andropov_uploader__preview_item__remove:hover {
+		background: rgb(61, 61, 61);
+		color: var(--font-color-main-hover);
+	}
+	.andropov_uploader__preview_item__remove:after {
+		display: block;
+		content: '✖️';
+		text-align: center;
+		font-size: 15px;
+		line-height: 24px;
+	}
+}
+@-moz-document domain("dtf.ru") {
+	/* БОКОВАЯ ПАНЕЛЬ (ЛЕВАЯ) */
+	.sidebar {
+		background: var(--lay-left-column-bck);
+		color: var(--font-color-main);
+		border-right: 1px solid rgb(75,74,74);
+	}
+	/* Правка скролла - теперь при конце скролла, страница не будет скроллиться */
+	.sidebar__widgets_parent {
+		overscroll-behavior: contain;
+	}
+	/* Итемы */
+	.sidebar-tree-list-item {
+		background: rgb(11,3,20);
+		color: var(--font-color-main);
+	}
+	/* Иконки итемов */
+	.sidebar-tree-list-item__link svg {
+		fill: rgb(116,116,196);
+	}
+	/* Ховер итемов, и кнопки "Ещё" */
+	.sidebar-tree-list-item:hover,
+	.sidebar-tree-list__show-more-button:hover {
+		background: rgb(39,11,71) !important;
+		border-radius: var(--radius-main);
+	}
+	/* Активный итем, т.е раздел текущей статьи */
+	.sidebar-tree-list-item--active {
+		background: black !important;
+		color: var(--font-color-main);
+	}
+	/* Кнопка добавления раздела в фавориты */
+	.sidebar-tree-list-item__favourite {
+		background: unset !important;
+	}
+	/*Иконка этой кнопки  */
+	.sidebar-tree-list-item__favourite svg {
+		fill: rgb(207,207,243);
+	}
+
+	/* Кнопка "Ещё" */
+	.sidebar-tree-list__show-more-button {
+		background: rgb(11,3,20) !important;
+		color: var(--font-color-main);
+	}
+	/* Футер. "О проекте", и т.п. */
+	.sidebar__footer {
+		background: black !important;
+		color: var(--font-color-main) !important;
+		width: 100%;
+	}
+	/* Ненужный элемент перед футером.
+	Не знаю, зачем он. Отключён. */
+	.sidebar__footer:before{
+	/*     background: black !important;
+		width: 100%; */
+		display: none;
+	}
+	div[class^='sidebar__widgets_parent'] {
+		padding-bottom: unset !important;
+	}
+	.sidebar__footer a[href='/plus'] span {
+		color: var(--font-color-main) !important;
+		background-image: unset;
+		background-size: unset;
+		background-position: unset;
+		-webkit-background-clip: unset;
+		-webkit-text-fill-color: unset;
+	}
+	/* Иконки футера */
+	.icon.icon--v_apple,
+	.icon.icon--v_android {
+		color: rgb(101,156,120);
+	}
+
+}
+@-moz-document domain("dtf.ru") {
+	/* БОКОВАЯ ПАНЕЛЬ (ПРАВАЯ) */
+	
+	.app--live-forcibly-collapsed .layout__right-column > div:nth-child(1) {
+		--size: 20px;
+		width: 20px;
+	}
+	
+	.app--live-forcibly-collapsed .layout__right-column > div > div > div:first-child {
+		left: -2px;
+	}
+	
+	
+
+	.layout__right-column > div > div:first-child {
+		position: fixed;
+		width: 100%;
+		top: 60px;
+	}
+	.app--live-forcibly-collapsed .layout__right-column {
+/* 		width: 80px !important; */
+		width: 20px !important;
+	}
+
+	.layout__right-column > div > div > div:first-child span {
+		display: none;
+	}
+	.layout__right-column > div > div > div:first-child > div > div:first-child:before {
+		display: block;
+		content: '📓';
+	}
+	.layout__right-column > div > div > div:first-child > div > div:last-child {
+		background: red;
+		display: none;
+	}
+
+
+	.layout__right-column {
+		background: var(--lay-right-column-bck) !important;
+	}
+	.layout__right-column a span {
+		color: rgb(255,250,250);
+	}
+	.layout__right-column a+a {
+		color: rgb(255,250,250);
+	}
+	.layout__right-column a[title] {
+		color: rgb(151,151,232);
+	}
+	.layout__right-column a[title]:hover {
+		color: rgb(166,166,255);
+	}
+
+	.layout__right-column > div > div > div:first-child {
+		width: 30px;
+		height: 30px;
+		top: 0px !important;
+		left: 13px;
+	/*     background: rgb(41,56,71); */
+		background: unset;
+	/*     border-bottom: 1px solid rgb(83,78,78); */
+	/*     box-shadow: 0px 11px 17px rgb(41,56,71); */
+		padding: 0px 0px 0px 0px;
+		transform: unset !important;
+		-webkit-transform: unset !important;
+		transform-origin: unset !important;
+		float: left !important;
+
+		position: absolute;
+	}
+	.layout__right-column > div > div > div:first-child > div {
+		height: 30px;
+	}
+	.layout__right-column > div > div > div:first-child > div > div {
+		font-size: 17px;
+		color: rgb(229,238,235);
+	}
+
+	/* Активирует видимый скроллбар комментариев. Вы ведь хотели этого, да?
+	АХТУНГ!!! При включении этого, скролл мышью перестанет работать,
+	для фикса используйте приложенный скрипт.
+	ППо-дефолту, ВЫКЛЮЧЕНО */
+	
+	/* Включите обе строки для активации скроллбара */
+	.layout__right-column > div > div > div+div {
+/* 		overflow: hidden; */
+	}
+	.layout__right-column > div > div > div+div > div {
+/* 		overflow-y: scroll; */
+		height: 100%;
+		overscroll-behavior: contain;
+	}
+
+	/* Переносит скроллбар комментариев налево. */
+	.layout__right-column > div > div > div+div > div {
+		direction:rtl;
+	}
+	.layout__right-column > div > div > div+div > div > div {
+		direction:ltr;
+	}
+
+	.layout__right-column > div > div > div+div > div::-webkit-scrollbar {
+		width: 8px;
+		background: rgb(41,56,71);
+		border-radius: var(--radius-main);
+		border: 1px solid rgb(46, 63, 80);
+	}
+
+	.layout__right-column > div > div > div+div > div::-webkit-scrollbar-track-piece {
+		background: unset;
+		margin-top: 4px;
+		margin-bottom: 4px;
+	}
+
+	.layout__right-column > div > div > div+div > div::-webkit-scrollbar-thumb {
+		background: rgba(227,209,228,0.7);
+		border-radius: var(--radius-main);
+		border: 1px solid black;
+	}
+	.layout__right-column > div > div > div+div > div::-webkit-scrollbar-thumb:hover {
+		background: rgb(203,207,234);
+	}
+}
+@-moz-document domain("dtf.ru") {
+	/*  МЕНЮ ОПОВЕЩЕНИЙ  */
+	
+	/* Панель */
+	.head-notifies__panel {
+/* 		border: 1px solid rgb(255,255,255); */
+		box-shadow: var(--menu-box-shadow);
+		border-radius: var(--radius-main);
+		background: var(--menu-bck);
+	}
+	/* Хеадер */
+	.notifications__header {
+		background: rgb(0,0,0);
+		color: var(--font-color-main);
+		border: unset !important;
+	}
+	
+	/* Ссылки */
+	/* на пользователя */
+	.u-notification__content__title a:nth-child(1) {
+		color: var(--ntf-author-color);
+	}
+	.u-notification__content__title a:nth-child(1):hover {
+		color: var(--ntf-author-color-hover);
+	}
+	/* на статью */
+	.u-notification__content__title a:nth-child(2) {
+		color: var(--ntf-topic-color);
+	}
+	.u-notification__content__title a:nth-child(2):hover {
+		color: var(--ntf-topic-color-hover);
+	}
+	
+	
+	.u-notification--border {
+		border: unset;
+	}
+	/* "Пометить как прочитано" */
+	.notifications__mark-as-read {
+		color: var(--link-main-color) !important;
+		font-weight: 500;
+	}
+	.notifications__mark-as-read:hover {
+		color: var(--link-main-color-hover) !important;
+		font-weight: 500;
+	}
+
+
+	.notifications__items-container::-webkit-scrollbar {
+		width: 9px;
+		background: rgb(51,8,81);
+		border: 1px solid rgb(69,8,109);
+	}
+	/* Кнопка "Больше статей" */
+	.ui-button {
+		background: var(--button-bck);
+		color: var(--font-color-main);
+		border: unset;
+		box-shadow: var(--box-shadow-main);
+		border-radius: var(--radius-main);
+	}
+	.ui-button:hover {
+		background: var(--button-bck-hover);
+	}
+
+	.notifications__items-container::-webkit-scrollbar-track-piece {
+		background: unset;
+		margin-top: 3px;
+		margin-bottom: 3px;
+	}
+
+	.notifications__items-container::-webkit-scrollbar-thumb {
+		background: rgba(227,209,228,0.7);
+		border-radius: 3px;
+		border: 1px solid black;
+	}
+	.notifications__items-container::-webkit-scrollbar-thumb:hover {
+		background: rgb(203,207,234);
+	}
+
+	.u-notification {
+		border: unset;
+		margin-bottom: 2px;
+	}
+	/* Типы оповещений */
+	.u-notification--green {
+		background: rgba(11,243,13,0.2);
+	}
+	.u-notification--red {
+		background: rgba(255,0,0,0.2);
+	}
+	.u-notification--blue {
+		background: rgba(0,138,255,0.2);
+	}
+	
+	.u-notification__link {
+	/*     background: blue; */
+	}
+	
+	/* "Развернуть" */
+	.u-notification__content__button {
+		color: var(--ntf-content-button-color);
+		font-weight: 500;
+	}
+	.u-notification__content__button:hover {
+		color: var(--ntf-content-button-color-hover);
+	}
+
+	.notifications__footer {
+		background: rgb(0, 0, 0);
+		border: unset !important;
+	}
+	.notifications__footer a {
+	    color: var(--link-main-color);
+	}
+	.notifications__footer a:hover {
+	    color: var(--link-main-color-hover);
+	}
+
+	.notifications__items {
+		background: black;
+		color: var(--font-color-main);
+	}
+	
+	
+	.u-notification.u-notification--hover:hover {
+		background: unset;
+	    opacity: 0.9;
+	}
+	
+	
+	.notifications__items time {
+		color: rgb(209,207,207);
+	}
+
+	.u-notification__content__date time {
+		color: rgb(209,207,207);
+	}
+
+
+	.andropov_link {
+		border: unset !important;
+		box-shadow: var(--box-shadow-main);
+		border-radius: var(--radius-main);
+		background: var(--bck-second);
+		max-width: 100%;
+	}
+	.andropov_link:hover {
+		background: var(--bck-second-hover);
+	}
+	.andropov_link__title {
+		color: var(--link-main-color);
+	}
+	.andropov_link__description {
+		color: var(--font-color-second);
+	}
+	
+}
+@-moz-document domain("dtf.ru") {
+/* РЕЖИМ СКРЫТОЙ ПРАВОЙ ПАНЕЛИ */
+	
+	/* По-дефолту, даже убранная правая панель ощутимо сжирает пространство. */
+	/* По-дефолту, убранная правая панель НЕ УВЕЛИЧИВАЕТ место для текста и вложений центральной колонки (статей). */
+	/* Моя првка делает возможным увеличение места для текста и вложений центральной колонки (статей) */
+	
+	/* Ширина центральной колонки (статей) */
+	.app--live-forcibly-collapsed .l-island-a {
+		width: var(--topic-width-enhanced) !important;
+	}
+	
+	.app--live-forcibly-collapsed .l-island-b {
+/* 		width: var(--topic-width-enhanced) !important; */
+	}
+	
+	.app--live-forcibly-collapsed .l-island-c {
+/* 		width: var(--topic-width-enhanced) !important; */
+	}
+	
+/* 	.app--live-forcibly-collapsed .content-container {
+		text-align: center;
+	} */
+	
+	.app--live-forcibly-collapsed .figure-gallery .gall {
+		grid-template-columns: repeat(4, auto);
+		width: var(--topic-width-enhanced);
+	}
+	
+	.app--live-forcibly-collapsed .content-container .andropov_image {
+		max-width: var(--topic-width-enhanced) !important;
+	}
+	.app--live-forcibly-collapsed .figure-image .andropov_image img {
+		/* max-width: calc(100% - 130px); */
+		max-width: var(--topic-width-enhanced);
+	}
+	
+/* 	.app--live-forcibly-collapsed .content-container {
+		width: var(--topic-width-enhanced);
+	} */
+	
+	.app--live-forcibly-collapsed div[id='page_wrapper'] {
+		max-width: var(--topic-width-enhanced) !important;
+		width: var(--topic-width-enhanced) !important;
+	}
+	
+	.app--live-forcibly-collapsed .l-page__content {
+/* 		width: var(--topic-width-enhanced); */
+	}
+	
+	.app--live-forcibly-collapsed .l-page__sidebar {
+		opacity: 0.4;
+/* 		position: absolute !important; */
+	}
+	.app--live-forcibly-collapsed .l-page__sidebar:hover {
+		opacity: 1;
+	}
+	
+	.app--live-forcibly-collapsed .content--embed {
+		width: var(--topic-width-enhanced);
+	}
+	
+}
+@-moz-document domain("dtf.ru") {
+	/* РЕДАКТОР */
+	
+	/* Кнопки управления в верхнем правом углу экрана */
+	.v-popup-fp-window__control {
+		color: var(--font-color-main);
+		opacity: 1;
+	}
+	
+	/* Меню публикации */
+	.writing-select .popover {
+		background: var(--menu-bck);
+		color: var(--menu-font-color);
+	}
+	.writing-select .popover-search .v-field__wrapper {
+		background: var(--menu-search-bck);
+		border: unset;
+		border-radius: var(--radius-main);
+		color: var(--menu-font-color);
+	}
+	.writing-select .popover-search .v-field__wrapper input {
+		color: var(--menu-font-color);
+	}
+	.writing-select .popover-search .v-field__wrapper .icon,
+	.writing-select .popover-search .v-field__wrapper input::placeholder {
+		color: var(--font-color-second);
+	}
+	
+	.writing-select :is(.popover-title__label, .popover-item__details) {
+		color: var(--font-color-second);
+	}
+	
+	.writing-select .popover-item--selected {
+		background: var(--menu-item-picked-bck);
+	}
+	.writing-select .popover-item:hover {
+		color: var(--font-color-second);
+		background: var(--menu-item-color-hovered-2);
+		border-radius: var(--radius-main);
+	}
+	
+	/* Меню тегов */
+	.editor-content .inline-dropdown {
+		background: var(--menu-bck);
+		border-radius: var(--radius-main);
+	}
+	.dropdown__found__item:hover {
+		background: var(--menu-item-color-hovered-2);
+	}
+	
+	/* Панель инструментов при выделении текста */
+	.cdx-inline-toolbar {
+/* 		background: rgb(106,5,85); */
+		background: var(--menu-bck);
+		border-radius: var(--radius-main);
+		color: rgb(195, 195, 195);
+		box-shadow: var(--box-shadow-main);
+	}
+	.cdx-inline-toolbar button {
+		background: rgb(71, 71, 71);
+		border-radius: 50%;
+	}
+	.cdx-inline-toolbar button:hover {
+		background: rgb(59, 97, 88) !important;
+	}
+	
+	.cdx-inline-toolbar__link-back {
+/* 		background: var(--button-bck); */
+		background: rgb(71, 71, 71);
+		padding: unset;
+		width: unset;
+		border-radius: var(--radius-main);
+		margin-left: 5px;
+	}
+	.cdx-inline-toolbar__link-back:after {
+		display: block;
+		content: '<';
+		color: var(--menu-font-color);
+		padding: 5px 3px 5px 3px;
+	}
+	.cdx-inline-toolbar__link-back:hover {
+		background: rgb(59, 97, 88);
+	}
+	
+	
+	/* Ссылка */
+	.cdx-inline-toolbar__input {
+		background: var(--menu-search-bck-2);
+		color: var(--menu-font-color);
+	}
+	
+	.ce-block__actions .cdx-icon {
+		color: red;
+	}
+	.ce-block-action__settings-toggler .cdx-icon {
+		display: none;
+	}
+	.ce-block-action__settings-toggler:after {
+		display: block;
+		content: '.. .. .. ';
+		white-space: break-spaces;
+		line-height: 5px;
+		width: 24px;
+		height: 24px;
+		text-align: center;
+	}
+	
+	.ce-block__actions .ce-block-settings__item {
+		color: rgb(255, 255, 255);
+	}
+	.ce-block__actions .ce-block-settings__item svg>path {
+		fill: rgb(255, 255, 255) !important;
+	}
+	.ce-block__actions .anchor-tool__input {
+		background: unset;
+	}
+	
+	.ce-block__actions .remove-tool--confirm {
+		background: unset;
+		color: rgb(255,146,146);
+	}
+	.ce-block__actions .remove-tool--confirm:hover {
+		background: rgb(48, 48, 48) !important;
+	}
+	
+	.ce-block__actions .ce-block-settings__item:hover {
+		background: rgb(48, 48, 48);
+	}
+	
+	/* Выбор инструмента */
+	.cdx-plugin-settings__item svg path {
+		stroke: var(--menu-font-color) !important;
+	}
+	.cdx-plugin-settings__item--active {
+		background: var(--menu-item-picked-bck);
+	}
+	.anchor-tool__input {
+		color: var(--menu-font-color);
+	}
+	
+	/* Музыка */
+	.audio-tool-cover,
+	.audio-tool-title,
+	.audio-tool-uploader {
+		background-color: var(--bck-second) !important;
+		color: var(--font-color-second) !important;
+	}
+	.audio-tool-title,
+	.audio-tool-uploader {
+		border: unset !important;
+		box-shadow: var(--box-shadow-main) !important;
+	}
+	
+	/* Меню "..." */
+	.v-mobile-menu__header {
+		background: var(--bck-third);
+		color: var(--menu-font-color);
+	}
+	.v-popup-window__content {
+		background: var(--bck-second);
+		border-radius: var(--radius-main);
+		color: var(--menu-font-color);
+		box-shadow: var(--box-shadow-main);
+	}
+	.v-popup-window__content .icon {
+		color: var(--menu-font-color);
+	}
+	/* и лист итемов */
+	.v-mobile-menu__list {
+		width: calc(100% + 20px);
+		margin-left: -10px;
+	}
+	/* и кнопка закрытия */
+	.v-mobile-menu__close:hover .icon {
+		color: var(--menu-item-color-hovered);
+	}
+	
+	/* "История версий" */
+	.editor-cp-tab__label:hover {
+		color: rgb(129, 250, 224);
+	}
+	/* при открытом меню */
+	.editor-cp-tab--active .editor-cp-tab__label {
+		color: rgb(0, 119, 255);
+	}
+	
+	/* Меню истории */
+	.editor-cp-tab__content {
+		background: var(--bck-third);
+		box-shadow: var(--box-shadow-main);
+		border-radius: var(--radius-main);
+	}
+	.editor-history-item {
+		border: unset;
+		box-shadow: var(--box-shadow-main);
+		border-radius: var(--radius-main);
+	}
+	.v-mobile-menu__item:hover {
+		background: var(--bck-second-hover);
+	}
+	
+	/* Просмотр галереи */
+	.v-popup-window__content .item {
+		background: rgb(56,0,42);
+	}
+	.v-popup-window__content :is(.item-navigation--prev,
+	.item-navigation--next) {
+		width: 50px;
+	}
+	
+	.item__control.item__control--prev {
+		right: unset;
+		left: 0px;
+		position: fixed;
+	}
+	.item__control.item__control--next {
+		right: 0px;
+		left: unset;
+		position: fixed;
+	}
+	
+	/* Quote */
+	.quote-tool__layout-icon:before {
+		content: '“';
+		display: block;
+		font-size: 93px;
+		color: rgb(253,253,253, 0.3);
+		font-family: 'Volkhov', serif;
+		margin: -10px 0px 0px -20px;
+		position: relative;
+	}
+	.quote-tool__layout-icon>svg {
+		display: none;
+	}
+	
+	/* Image upload button */
+	.gallery-image__media-settings .upload-button {
+		background: unset;
+		box-shadow: unset;
+	}
+	
+	/* Изображения */
+	.gallery-image__media-content {
+		background: unset;
+	}
+	
+	.writing__authors {
+		background: unset;
+	}
+	
+	.writing-title {
+		background: unset;
+		color: var(--font-color-main);
+	}
+	
+	.person-tool {
+		background: var(--bck-main);
+		padding: 10px 5px 10px 5px;
+/* 		box-shadow: var(--box-shadow-main); */
+		border-radius: var(--radius-main);
+	}
+	.person-tool .avatar-input img {
+		border-radius: 50%;
+	}
+	
+	.cdx-input {
+		background: rgb(0, 0, 0);
+		border-radius: var(--radius-main);
+		box-shadow: var(--box-shadow-main);
+		color: var(--font-color-main);
+	}
+	.cdx-input--multiline {
+		background: unset;
+	}
+	.quiz-tool-input {
+		background: unset;
+		box-shadow: var(--box-shadow-main);
+	}
+	
+	.cdx-input.incut-tool__text {
+		background: unset;
+		box-shadow: var(--box-shadow-main);
+		border-radius: var(--radius-main);
+	}
+	
+	.code-tool {
+		background: unset !important;
+		color: var(--font-color-main);
+		box-shadow: var(--box-shadow-main);
+		border: unset !important;
+		border-radius: var(--radius-main);
+	}
+	.code-input {
+		color: var(--font-color-main);
+	}
+	
+	/* Подпись под галереями и изображениями */
+	.gallery-image__inputs .input {
+		text-align: center;
+	}
+	
+	
+	/* Меню выбора инструментов */
+	.ce-popover {
+		background: black;
+		color: var(--font-color-main);
+		box-shadow: var(--box-shadow-main);
+		border-radius: var(--radius-main);
+	}
+	.ce-toolbox-search {
+		background: rgb(77, 77, 77);
+		border-radius: var(--radius-main);
+		color: var(--font-color-main);
+	}
+	.ce-toolbox-search-icon {
+		color: var(--font-color-main);
+	}
+	.ce-toolbox-search-input {
+		color: var(--font-color-main);
+	}
+	.ce-toolbox-search-input::placeholder {
+		color: var(--font-color-second) !important;
+	}
+	.ce-toolbox__item-icon {
+		color: var(--font-color-main);
+		background-color: white;
+		border-radius: 50%;
+	}
+	
+	/* Твиты */
+	.editor-content .andropov_tweet {
+		background: rgb(24,61,77);
+		border-radius: var(--radius-main);
+		box-shadow: var(--box-shadow-main);
+		border: unset;
+	}
+	.editor-content .andropov_tweet .andropov_tweet__user {
+		border-bottom: unset !important;
+	}
+	.editor-content .andropov_tweet__header {
+		background: rgb(51,51,51);
+		border-radius: var(--radius-main);
+		box-shadow: var(--box-shadow-main);
+		border: unset;
+	}
+
+	.editor-content .andropov_tweet__media {
+		background: rgb(51,51,51);
+		padding: 0px 0px 10px 0px;
+		margin: unset !important;
+	}
+	
+	.editor-content .cdx-input.twitter-tool__title {
+		background: unset;
+		box-shadow: var(--box-shadow-main);
+		margin: -10px 0px 0px 0px;
+		text-align: center;
+		color: rgb(204, 247, 170);
+	}
+	
+	/* Правка вида ссылок */
+	.editor-content .ce-redactor a:not(.t-link-inline):not(.andropov_link), .editor-content .content--embed p:not(.block-embed-link) a {
+		border: unset !important;
+		color: var(--link-main-color) !important;
+	}
+	
+	
+	/* Скроллбар */
+	.ce-popover::-webkit-scrollbar {
+		width: var(--scrollbar-main-width);
+		background: var(--scrollbar-main-bck) !important;
+		border: var(--scrollbar-main-border);
+	}
+
+	.ce-popover::-webkit-scrollbar-track-piece {
+		background: unset;
+		margin-top: 3px;
+		margin-bottom: 3px;
+	}
+
+	.ce-popover::-webkit-scrollbar-thumb {
+		background: var(--scrollbar-main-thumb-bck);
+		border-radius: var(--scrollbar-main-thumb-radius);
+		border: var(--scrollbar-main-thumb-border);
+	}
+	.ce-popover::-webkit-scrollbar-thumb:hover {
+		background: var(--scrollbar-main-thumb-bck-hover);
+	}
+	
+	.writing__footer,
+	.writing__footer>div {
+		background: var(--bck-main);
+	}
+	.writing-footer__autosave {
+		color: var(--font-color-main);
+	}
+	.writing-footer__autosave--finished {
+		color: rgb(201, 230, 155);
+	}
+	
+	.writing__footer .writing-footer__etc {
+		background: var(--button-bck);
+		color: var(--font-color-main);
+		box-shadow: var(--box-shadow-main);
+		border-radius: var(--radius-main);
+	}
+	.writing__footer .writing-footer__etc:hover {
+		background: var(--button-bck-hover);
+	}
+}
+@-moz-document domain("dtf.ru") {
+	/* ССЫЛКИ */
+	
+	/* Ссылка в правой колонке */
+	.andropov_link_mini.andropov_link_mini--link {
+		color: var(--font-color-main);
+	}
+	
+	/* Ссылки в статье (исключая теги) */
+	.content .l-island-a a:not([href*='tag']) {
+		color: var(--link-main-color);
+		border: unset;
+		font-weight: 600;
+	}
+	.content .l-island-a a:not([href*='tag']):hover {
+		color: var(--link-main-color-hover);
+		border: unset;
+	}
+	
+	/* Ссылки в статье (теги) */
+	.content a[href*='tag'] {
+		color: var(--link-main-color);
+		border: unset;
+		font-weight: 600;
+	}
+	.content a[href*='tag']:hover {
+		color: var(--link-main-color-hover);
+		border: unset;
+	}
+	
+	/* Ссылки в комментариях */
+	.comment__text a {
+		color: var(--link-main-color);
+		border: unset;
+		font-weight: 600;
+		min-width: 10px;
+	    max-width: 70%;
+	    height: 19px;
+	    overflow: hidden;
+		display: inline-block;
+	    word-wrap: break-all;
+	    word-break: break-all;
+	}
+	.comment__text a:after {
+		display: block;
+		content: '';
+		width: 10px;
+		height: 12px;
+		color: var(--link-main-color);
+		position: relative;
+		box-shadow: inset -4px 0px 5px 0px rgb(229, 88, 88);
+		/* left: 100%; */
+		top: -18px;
+		float: right;
+	}
+	.comment__text a:hover {
+		color: var(--link-main-color-hover);
+		border: unset;
+	}
+	
+	
+	/* СТРАНИЦА ПОДПИСОК */
+	
+	/* Поиск */
+	.subsites_catalog__search {
+		border: unset;
+		box-shadow: 0px 0px 1px 1px rgba(255,255,255, 47%);
+		width: 99%;
+		margin: 10px 0px 10px 5px;
+	}
+	.subsites_catalog__search__bar {
+		background: var(--bck-second);
+		border-radius: var(--radius-main);
+/* 		box-shadow: 0px 0px 1px 1px rgba(255,255,255, 47%); */
+	}
+	
+	/* Скрыть/показать */
+	.subsites_catalog__open_wrapped {
+		color: var(--link-main-color);
+	}
+	.subsites_catalog__open_wrapped:hover :is(.subsites_catalog__open_wrapped__closed, svg),
+	.subsites_catalog__open_wrapped:hover {
+		color: var(--link-main-color-hover);
+	}
+	/* и правка размера */
+	.subsites_catalog--wrapper_open .subsites_catalog__wrapper {
+		height: max-content !important;
+	}
+	
+	/* Итемы (подсайты) */
+	.subsites_catalog_item {
+		box-shadow: var(--box-shadow-main);
+		margin-top: 2px;
+		margin-bottom: 7px;
+		width: 99%;
+		margin-left: 5px;
+		padding: 5px 10px 5px 10px !important;
+	}
+	/* Аватарки подсайтов */
+	.subsites_catalog_item .andropov_image {
+		border-radius: 50%;
+	}
+	/* и расположение кнопок */
+	.subsite_card_simple__controls {
+		align-items: center;
+	}
+	.subsites_catalog_item .v-subscribe-button__subscribe {
+		left: -10px;
+	}
+	
+	/* Убрать разделители */
+	:is(.subsites_catalog_item, .subsites_catalog_item:first-child):before,
+	.subsites_catalog__wrapper .subsites_catalog_item:first-child:before {
+		display: none !important;
+	}
+	
+	/* "Рекомендовано" */
+	.subsites_catalog__label {
+		color: var(--font-color-second);
+		border: unset;
+		padding-bottom: 10px;
+	}
+	
+	/* Аудиоплеер */
+	.block-audio__player {
+		background: rgb(40,1,39);
+		box-shadow: var(--box-shadow-main);
+	}
+	.audio_player {
+		justify-content: center;
+	}
+	
+	.audio_player__control__rwd,
+	.audio_player__control__play,
+	.audio_player__control__pause,
+	.audio_player__control__fwd {
+		color: rgb(194, 250, 232);
+	}
+	:is(.audio_player__control__rwd,
+	.audio_player__control__play,
+	.audio_player__control__pause,
+	.audio_player__control__fwd):hover {
+		color: rgb(224, 245, 239);
+	}
+	
+	.audio_player__control--seek {
+		width: 98%;
+	}
+	.audio_player__control__slider__bg {
+		background: rgb(82,0,72);
+	}
+	.audio_player__control__slider__bar {
+		background: rgb(160,252,204);
+	}
+	
+	
+	.block-audio__player .audio_player__control--duration {
+		color: var(--font-color-second);
+	}
+	.block-audio__player .audio_player__control--listens {
+		color: var(--font-color-second);
+	}
+	
+	.block-audio__player .audio_player__control--download {
+		color: var(--font-color-main) !important;
+	}
+	.block-audio__player .audio_player__control--download:hover {
+		color: var(--font-color-main-hover) !important;
+	}
+	
+	.audio_player__control--volume .audio_player__control__slider {
+		background: rgb(40,1,39);
+	}
+	
+	.audio_player__control__rate,
+	.audio_player__control__volume,
+	.audio_player__control__mute {
+		color: var(--font-color-second) !important;
+	}
+	:is(.audio_player__control__rate,
+	.audio_player__control__volume,
+	.audio_player__control__mute):hover {
+		color: var(--font-color-second-hover) !important;
+	}
+	
+	/* Парящий плеер */
+	.floating_player {
+		background: rgb(40,1,39);
+	}
+	
+	.text_loop__grd--l {
+		background: linear-gradient(90deg, rgb(40,1,39), transparent);
+	}
+	.text_loop__grd--r {
+		background: linear-gradient(270deg, rgb(40,1,39), transparent);
+	}
+	
+	.text_loop__p {
+		color: rgb(255,255,255);
+	}
+	
+	.floating_player .audio_player__control--duration {
+		color: rgb(179, 179, 179);
+	}
+	
+}
