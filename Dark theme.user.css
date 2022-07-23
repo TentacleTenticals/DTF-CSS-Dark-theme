@@ -2775,6 +2775,12 @@
 		box-shadow: var(--box-shadow-main);
 	}
 	
+	/* Тег */
+	.editor-content .inline-search-item--hashtag {
+		color: var(--link-main-color);
+		font-weight: 600 !important;
+	}
+	
 	
 	/* Скроллбар */
 	.ce-popover::-webkit-scrollbar {
