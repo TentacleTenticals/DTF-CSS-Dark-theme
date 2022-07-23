@@ -139,6 +139,11 @@
 		background-color: var(--bck-main);
 	}
 	
+	/* Отключение донатной фигни в шапке. Но я бы на вашем месте блокировал её через адлобки. */
+	.support.support--flexible {
+		display: none !important;
+	}
+	
 	
 /* 	.andropov__link-mini {
 		color: red;
